@@ -79,10 +79,9 @@ io.on('connection', (socket) => {
   socket.on('set-nickname', (nickname) => {
     socket.nickname = nickname;
     usr.push(nickname);
-    if(usr.length == 2){startBid();}   
     io.sockets.emit('users-changed', {user: nickname, event: 'joined', index: this.indexUsers});
     this.indexUsers = this.indexUsers + 1;
-     
+    if(usr.length == 2){startBid();}   
   });
   function startBid(){
     for(var i = 0; i < usr.length; i++){
