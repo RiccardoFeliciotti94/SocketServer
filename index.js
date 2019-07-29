@@ -49,7 +49,7 @@ io.on('connection', (socket) => {
     for (var i=usr.length-1; i>=0; i--) {
       if (usr[i] === socket.nickname) {
           usr.splice(i, 1);
-          this.indexUsers = this.indexUsers - 1;
+          indexUsers = indexUsers - 1;
           break;
       }
     }
@@ -79,8 +79,8 @@ io.on('connection', (socket) => {
   socket.on('set-nickname', (nickname) => {
     socket.nickname = nickname;
     usr.push(nickname);
-    io.sockets.emit('users-changed', {user: nickname, event: 'joined', index: this.indexUsers});
-    this.indexUsers = this.indexUsers + 1;
+    io.sockets.emit('users-changed', {user: nickname, event: 'joined', index: indexUsers});
+    indexUsers = indexUsers + 1;
     if(usr.length == 2){startBid();}   
   });
   function startBid(){

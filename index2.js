@@ -49,7 +49,7 @@ io.on('connection', (socket) => {
     for (var i=usr.length-1; i>=0; i--) {
       if (usr[i] === socket.nickname) {
           usr.splice(i, 1);
-          this.indexUsers = this.indexUsers - 1;
+          indexUsers = indexUsers - 1;
           break;
       }
     }
