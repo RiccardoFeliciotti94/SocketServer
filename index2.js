@@ -80,8 +80,8 @@ io.on('connection', (socket) => {
     socket.nickname = nickname;
     usr.push(nickname);
     if(usr.length == 2){startBid();}   
-    io.sockets.emit('users-changed', {user: nickname, event: 'joined', index: this.indexUsers});
-    this.indexUsers = this.indexUsers + 1;
+    io.sockets.emit('users-changed', {user: nickname, event: 'joined', index:indexUsers});
+    indexUsers = indexUsers + 1;
      
   });
   function startBid(){
