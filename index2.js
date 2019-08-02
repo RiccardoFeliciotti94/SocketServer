@@ -194,11 +194,6 @@ function updateDB(){
       https.send(params);
     }
   }
-  var https = new XMLHttpRequest();
-  var url = "http://riccardohosts.ddns.net:8080/updateAstaData.php";
-  var params = JSON.stringify({ username : astaId });
-  https.open("POST", url, false);
-  https.send(params);
 }
 
 function arr_diff (a1, a2) {
